@@ -47,6 +47,7 @@ search.addEventListener("keyup", (e) => {
 
     if (title.includes(text)) {
       item.style.display = ""
+      document.querySelector(".container").style.display = "none"
     } else {
       item.style.display = "none"
     }

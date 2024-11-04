@@ -79,7 +79,7 @@ main {
 }
 
 h1 {
-    color: var(--text-color);
+    color: white;
     font-size: 5vw;
     width: 50vw;
     text-align: center;
@@ -110,7 +110,7 @@ h1 span {
     outline: 0;
     background-color: transparent;
     font-size: 1vw;
-    color: white;
+    color: black;
 }
 
 .row img {
