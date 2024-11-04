@@ -4,8 +4,22 @@
     font-family: 'Poppins';
 }
 
+:root {
+    --background-color: #0D0D0D;
+    --text-color: white;
+    --separator: white;
+    --border-color: #333333;
+}
+
+.light-mode {
+    --background-color: white;
+    --text-color: #0d0d0d;
+    --separator: #0D0D0D;
+    --border-color: #333333;
+}
+
 body {
-    background-color: #0D0D0D;
+    background-color: var(--background-color);
 }
 
 h1, h2, h3, h4 {
@@ -65,7 +79,7 @@ main {
 }
 
 h1 {
-    color: white;
+    color: var(--text-color);
     font-size: 5vw;
     width: 50vw;
     text-align: center;
@@ -96,7 +110,7 @@ h1 span {
     outline: 0;
     background-color: transparent;
     font-size: 1vw;
-    color: #0D0D0D;
+    color: white;
 }
 
 .row img {
@@ -206,7 +220,7 @@ h2 {
 .section-title .seperator {
     width:80%;
     height: 0.05rem;
-    background-color: white;
+    background-color: var(--separator);
 }
 
 
