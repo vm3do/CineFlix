@@ -143,6 +143,7 @@ nav label:hover {
 
 .movies-details p {
     font-size: 1.2vw;
+    color: var(--text-color);
 }
 
 .details-container .stars {
