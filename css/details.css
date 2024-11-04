@@ -39,7 +39,6 @@ nav {
     align-items: center;
     margin: auto;
     padding: 2vh 5vw;
-    color: white;
 }
 
 .logo {
@@ -63,6 +62,7 @@ ul a {
 }
 
 ul label {
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -112,7 +112,7 @@ h2 {
 .section-title .seperator {
     width:80%;
     height: 0.05rem;
-    background-color: white;
+    background-color: var(--text-color);
 }
 
 
