@@ -31,3 +31,24 @@ document.querySelector(".prev").addEventListener("click", () => {
   carousel.scrollBy({ left: 300, behavior: "smooth" });
   setTimeout(() => Hovered = false, 2000);
 });
+
+
+////////////////////////////////////
+
+let search = document.querySelector("input[type='search']")
+let movies = document.querySelectorAll(".movies .item")
+let slider = document.querySelector(".container")
+
+search.addEventListener("keyup", (e) => {
+  let text = e.target.value.toLowerCase()
+
+  movies.forEach((item) => {
+    let title = item.getAttribute('data-title').toLowerCase()
+
+    if (title.includes(text)) {
+      item.style.display = ""
+    } else {
+      item.style.display = "none"
+    }
+  })
+})
