@@ -14,7 +14,7 @@ h1, h2, h3, h4 {
 }
 
 .hero {
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -28,7 +28,7 @@ nav {
 }
 
 .logo {
-    width: 15vh;
+    width: 8vw;
     cursor: pointer;
 }
 
@@ -55,12 +55,13 @@ nav label:hover {
     color: #FF3B3B;
 }
 
-.details-container {
+.details-container { /* ///////////////////////////// */
     display: flex;
+    flex-direction: row;
     width: 80vw;
-    height: 90vh;
-    gap: 6vw;    
-    margin: auto;
+    height: auto;
+    gap: 3vw;    
+    margin: 10vh auto;
     overflow: hidden;
 }
 
@@ -69,12 +70,15 @@ nav label:hover {
 }
 
 .details-container .poster {
-    aspect-ratio: 2/3;
-    object-fit: contain;
+    width: 100%;
+    min-width: auto;
+    aspect-ratio: 2 / 3;
     border: solid 0.5em #FF3B3B;
+    overflow: hidden;
 }
 
 .details-container .poster img {
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     object-position: center;
     width: 100%;
@@ -83,6 +87,7 @@ nav label:hover {
 
 .first-line {
     display: flex;
+    justify-content: space-between;
     gap: 5vw;
 }
 
@@ -90,18 +95,24 @@ nav label:hover {
     margin-top: 2vh;
     display: flex;
     gap: 1vw;
-    font-size: 2vw;
     align-items: center;
     justify-content: end;
 }
 
-.counter-container img {
-    width: 50%;
+.counter-container i {
+    color: #FF3B3B;
+    font-size: 3vw;
+    transition: 0.3s ease;
+}
+
+.counter-container i:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease;
 }
 
 .counter-container p{
     color: #FF3B3B;
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
 .first-line h3 {
@@ -119,22 +130,33 @@ nav label:hover {
 }
 
 .details-container .stars {
+    display: flex;
     margin: 7vh 0 4vh;
+}
+
+.stars i {
+    color: #FF3B3B;
+    font-size: 2.6vw;
+    transition: 0.3s;
+}
+
+.stars i:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
 }
 
 .details-container textarea {
     width: 100%;
-    max-width: 100%;
-    height: 30vh;
+    height: 40vh;
     border-radius: 10px;
     border: none;
     outline: none;
-    padding: 10px 20px;
+    padding: 10px;
     margin-top: 1vh;
     resize: none;
     background-color: #333333;
     color: white;
-    font-size: 1.4em;
+    font-size: 1em;
 }
 
 .details-container textarea::-webkit-scrollbar {
@@ -145,14 +167,18 @@ nav label:hover {
     width: 100%;
     height: 2.5em;
     margin-top: 1vh;
-    max-width: 100%;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     background-color: #FF3B3B;
     color: white;
-    font-size: 1.4em;
-    font-weight: medium;
+    font-size: 1.2em;
+    transition: 0.3s ease;
+}
+
+.details-container button:hover {
+    background-color: #fb6a27;
+    transition: 0.3s ease;
 }
 
 .comment-container h4 {
@@ -223,4 +249,71 @@ footer div {
 
 footer p {
     color: white;
+}
+
+
+@media (max-width: 768px) {
+    .logo {
+        width: 20vw;
+        cursor: pointer;
+    }
+
+    .details-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: start;
+    }
+
+    .details-container h3 {
+        font-size: 6vw;
+    }
+
+    .details-container p {
+        font-size: 2.5vw;
+    }
+
+    .counter-container i {
+        font-size: 5vw;
+    }
+
+    .counter-container p {
+        font-size: 4.5vw;
+    }
+
+
+
+    .stars i {
+        color: #FF3B3B;
+        font-size: 4.5vw;
+        transition: 0.3s;
+    }
+
+    .details-container textarea {
+        height: 15vh;
+        font-size: 1em;
+    }
+
+    .details-container button {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce spacing and font sizes */
+    nav ul li {
+        margin-right: 4vw;
+    }
+
+    .details-container h3 {
+        font-size: 7vw;
+    }
+
+    .details-container p {
+        font-size: 4vw;
+    }
+
+    .details-container button {
+        font-size: 1em;
+    }
 }

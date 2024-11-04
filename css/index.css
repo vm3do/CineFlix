@@ -29,7 +29,7 @@ nav {
 }
 
 .logo {
-    width: 15vh;
+    width: 8vw;
     cursor: pointer;
 }
 
@@ -116,13 +116,14 @@ h1 span {
 
 .slider-container {
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between;
     width: 80%;
 }
 
 .slider-container i {
-    color: white;
+    color: #FF3B3B;
     font-size: 10vh;
     cursor : pointer;
     
@@ -132,7 +133,7 @@ h1 span {
     height: auto;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: fit-content;
     margin: auto;
@@ -143,17 +144,24 @@ h1 span {
     gap: 20px; /* Space between cards */
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
+    width: max-content;
 }
 
 .slider .item {
     aspect-ratio: 2 / 3;
-    height: 390px;
+    height: 450px;
     min-width: 260px;
     flex-shrink: 0;
-    border: solid 1vh #333333;
+    border: solid 1.6vh #333333;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.slider .item:hover {
+    transform: scale(0.95);
+    transition: 0.3s ease;
 }
 
 .item img {
@@ -165,18 +173,46 @@ h1 span {
 
 .movies {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 240px));;
     gap: 5vw;
     justify-content: center;
 }
 
+.movies a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 h2 {
-    font-size: 5vw;
+    font-size: 4.3vw;
+    color: #FF3B3B;
+    margin: 10vh 0;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    margin: 10vh auto;
+}
+
+.section-title h5 {
+    font-size: 4vw;
     color: #FF3B3B;
 }
 
+.section-title .seperator {
+    width:80%;
+    height: 0.05rem;
+    background-color: white;
+}
+
+
+
 .movies-container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     padding: 10vh 0;
 }
@@ -192,18 +228,19 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4vw;
+    font-size: 90px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .movies .item:hover i {
+    transition: 0.3 ease;
     opacity: 1;
 }
 
 .movies .item i:hover {
     transition: 0.3s ease;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .movies .item:hover {
@@ -218,6 +255,7 @@ h2 {
     height: 100%;
     background-color: transparent;
     transition: background-color 0.3s ease;
+    pointer-events: none; 
 }
 
 .movies .item:hover::before {
@@ -244,5 +282,57 @@ footer div {
 
 footer p {
     color: white;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .hero {
+        height: 75vh;
+    }
+
+    .logo {
+        width: 20vw;
+        cursor: pointer;
+    }
+    
+    h1 {
+    font-size: 9vw;
+    width: 80vw;
+    }
+
+    .search-bar {
+        width: 80vw;
+    }
+
+    .row input {
+        font-size: 3vw;
+    }
+
+    .slider-container i {
+        font-size: 7vh;
+    }
+
+    .slider .item {
+        height: 206px;
+        min-width: 120px;
+    }
+
+    h2 {
+        font-size: 7.3vw;
+        margin: 3vh 0;
+    }
+
+    .movies {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 180px));;
+    }
+
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin-right: 4vw;
+    }
 }
 
