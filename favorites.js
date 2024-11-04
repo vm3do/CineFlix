@@ -29,7 +29,7 @@ const heartIcon = document.querySelector(".heart-icon");
         count++;
         counterDisplay.textContent = count;
     });
-////////////////
+//////////////////////////////////
 const stars = document.querySelectorAll(".stars i");
 
 stars.forEach((star, index1) => {
@@ -40,3 +40,48 @@ stars.forEach((star, index1) => {
     });
 });
 
+/////////////////////// comment
+// let submit = document.querySelector("#submit")
+// submit.addEventListener('click', () => {
+//     let input = document.querySelector("textarea")
+//     let comments = document.querySelector(".comments")
+//     comments.className = "comments"
+//     const commentBox = document.createElement("div")
+
+//     commentBox.className = "comment";
+
+//     const user = document.createElement("p")
+//     user.className = "comment-name"
+//     user.textContent = "You"
+
+//     const para = document.createElement("p")
+//     para.className = "comment-input"
+//     p.textContent = input.value
+
+//     commentBox.appendChild(para)
+//     comments.appendChild(commentBox)
+// })
+
+let submit = document.querySelector("#submit")
+submit.addEventListener('click', () => {
+    let input = document.querySelector("textarea")
+    let comments = document.querySelector(".comments")
+    comments.className = "comments"
+    const commentBox = document.createElement("div")
+
+    commentBox.className = "comment"
+
+    const user = document.createElement("p")
+    user.className = "comment-name"
+    user.textContent = "You"
+
+    const para = document.createElement("p")
+    para.className = "comment-input"
+    para.textContent = input.value
+
+    commentBox.appendChild(user)
+    commentBox.appendChild(para)
+    comments.appendChild(commentBox)
+
+    input.value = ""
+})
