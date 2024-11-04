@@ -78,38 +78,4 @@ themeToggleButton.addEventListener("click", toggleTheme);
 
 applySavedTheme();
 
-////////////////////////////////// ratting
-
-document.addEventListener("DOMContentLoaded", () => {
-  const stars = document.querySelectorAll("#star-rating .fa-star");
-
-  // Function to apply the saved rating from localStorage
-  function applySavedRating() {
-    const savedRating = localStorage.getItem("rating");
-
-    if (savedRating) {
-      highlightStars(parseInt(savedRating));
-    }
-  }
-
-  // Function to highlight stars up to the selected rating
-  function highlightStars(rating) {
-    stars.forEach(star => {
-      star.classList.toggle("filled", parseInt(star.getAttribute("data-value")) <= rating);
-    });
-  }
-
-  // Add click event to each star
-  stars.forEach(star => {
-    star.addEventListener("click", () => {
-      const rating = parseInt(star.getAttribute("data-value"));
-      localStorage.setItem("rating", rating); // Save rating in localStorage
-      highlightStars(rating); // Highlight stars based on the rating
-    });
-  });
-
-  // Apply the saved rating on page load
-  applySavedRating();
-});
-
 
