@@ -192,6 +192,12 @@ moviesContainer.addEventListener('click', e => {
       saveddMovie.classList.add('fa-solid')
       savedMovies.push(aMovie)
       localStorage.setItem('savedmovies', JSON.stringify(savedMovies))
+    } else {
+      const index = savedMovies.findIndex(e => e.title === item.dataset.title)
+      saveddMovie.classList.remove('fa-solid')
+      saveddMovie.classList.add('fa-regular')
+      savedMovies.splice(index, 1)
+      localStorage.setItem('savedmovies', JSON.stringify(savedMovies))
     }   
   } 
 )
