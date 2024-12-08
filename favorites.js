@@ -20,68 +20,65 @@ function toggleTheme() {
 themeToggleButton.addEventListener("click", toggleTheme);
 
 applySavedTheme();
+//////////////////////////////////////////////////////////
 
-const heartIcon = document.querySelector(".heart-icon");
-    const counterDisplay = document.querySelector(".counter");
-    let count = 0;
-
-    heartIcon.addEventListener("click", () => {
-        count++;
-        counterDisplay.textContent = count;
-    });
 //////////////////////////////////
-const stars = document.querySelectorAll(".stars i");
 
-stars.forEach((star, index1) => {
-    star.addEventListener("click", () => {
-        stars.forEach((star, index2) => {
-            index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
-        });
-    });
-});
 
-/////////////////////// comment
-// let submit = document.querySelector("#submit")
-// submit.addEventListener('click', () => {
-//     let input = document.querySelector("textarea")
-//     let comments = document.querySelector(".comments")
-//     comments.className = "comments"
-//     const commentBox = document.createElement("div")
+const savedmovies = JSON.parse(localStorage.getItem('savedmovies')) || [];
+console.log(savedmovies);  // Check what the data is
 
-//     commentBox.className = "comment";
+if (!Array.isArray(savedmovies)) {
+  console.error("Error: 'savedmovies' is not an array.");
+  
+}
 
-//     const user = document.createElement("p")
-//     user.className = "comment-name"
-//     user.textContent = "You"
 
-//     const para = document.createElement("p")
-//     para.className = "comment-input"
-//     p.textContent = input.value
+function displaySaved(savedmovies) {
+  const mvcontainer = document.querySelector(".movies"); // The container for movies
 
-//     commentBox.appendChild(para)
-//     comments.appendChild(commentBox)
-// })
+  mvcontainer.innerHTML = ""; // Clear existing content
 
-let submit = document.querySelector("#submit")
-submit.addEventListener('click', () => {
-    let input = document.querySelector("textarea")
-    let comments = document.querySelector(".comments")
-    comments.className = "comments"
-    const commentBox = document.createElement("div")
+  if(!savedmovies || savedmovies.length === 0) {
+    if (!document.querySelector('.noMovies')) {
+      const pr = document.createElement('p');
+      pr.textContent = 'No saved Movies Yet';
+      pr.classList.add('noMovies');
+      
+      mvcontainer.appendChild(pr);
+    }
+  }
 
-    commentBox.className = "comment"
+  savedmovies.forEach(movie => {
+    const movieHTML = `
+      <div class="item" data-title="${movie.title}">
+        <i class="fa-solid fa-bookmark " style="color: #ffffff;">
+          <a href="${movie.detailsUrl}">
+          </a>
+          
+        </i>
+        <img src="${movie.image}" alt="${movie.title}">
+      </div>`;
+    mvcontainer.innerHTML += movieHTML;
+  });
+}
 
-    const user = document.createElement("p")
-    user.className = "comment-name"
-    user.textContent = "You"
+displaySaved(savedmovies)
 
-    const para = document.createElement("p")
-    para.className = "comment-input"
-    para.textContent = input.value
+const moviesContainer = document.querySelector('.movies')
 
-    commentBox.appendChild(user)
-    commentBox.appendChild(para)
-    comments.appendChild(commentBox)
+moviesContainer.addEventListener('click', e => {
+  const item = e.target.closest('.item')
+  const savedMovie = e.target.closest('.item i')
+  if (!item || !savedMovie) return;
+  const isSaved = savedmovies.some(saved => saved.title === item.dataset.title)
+  if (isSaved) {
+      const index = savedmovies.findIndex(e => e.title === item.dataset.title)
+      savedmovies.splice(index, 1)
+      localStorage.setItem('savedmovies', JSON.stringify(savedmovies))
 
-    input.value = ""
-})
+    }   
+    displaySaved(savedmovies)
+  } 
+  
+)
