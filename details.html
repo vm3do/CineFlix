@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie's Detilas</title>
-    <link rel="stylesheet" href="css/details.css">
+    <title>My List</title>
+    <link rel="stylesheet" href="css/favorites.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -18,14 +18,64 @@
                 <label id="theme-toggle">Light</label>
             </ul>
         </nav>
-    </div>
-    <div class="movies-container">
-        <div class="section-title">
-            <div><h6>MY LIST</h6></div>
-            <div class="seperator"></div>
+        <div class="details-container">
+            <div class="poster">
+                <img src="assets/fallenangels.jfif" alt="fallen angel">
+            </div>
+            <div class="details">
+                <div class="first-line">
+                    <h3>Fallen Angels</h3>
+                    <div class="counter-container">
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <p class="counter"></p>
+                    </div>
+                </div>
+    
+                <div class="seperator"></div>
+                
+                <div class="movies-details">
+                    <p>This Hong Kong-set crime drama follows the lives of a hitman, hoping to get out of the business, and his elusive female partner. This Hong Kong-set crime drama follows the lives of a hitman, hoping to get out of the business, and his elusive female partner.</p>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="comment-section">
+                    <textarea name="" id="" placeholder="comment.."></textarea>
+                </div>
+                <button type="submit" id="submit">Add Comment</button>
+            </div>
         </div>
-        <div class="movies">
-            <div class="item"><i class="fa-regular fa-bookmark" style="color: #ffffff;"><a href="details.html"></i><img src="assets/angrymen.jpg" alt="angrymen"></a></div>
+    </div>
+
+    <div  class="seperator"></div>
+
+    <div class="comment-container">
+        <div>
+            <h4>Comments</h4>
+            <div class="comments">
+                <div class="comment">
+                    <div class="info">
+                        <div class="comment-profile"><img src="assets/icon.svg" alt="profile"></div>
+                        <div class="comment-name"><p>Mohammed Ayadi</p></div>
+                    </div>
+                    <div class="comment-input">
+                        <p>Really enjoyed it .. the style, the atmosphere, and the unique characters made it super memorable. Wong Kar-wai knows how to make a film feel like a dream. Definitely a cool watch!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="info">
+                        <div class="comment-profile"><img src="assets/icon.svg" alt="profile"></div>
+                        <div class="comment-name"><p>Mohammed Ayadi</p></div>
+                    </div>
+                    <div class="comment-input">
+                        <p>Fallen Angels is a trippy, visually stunning dive into the loneliness of city life. Wong Kar-wai captures Hong Kong at night like no one else, with oddball characters and wild, neon-soaked shots. It’s weird, poetic, and definitely not for everyone, but if you’re into moody, artsy films, it’s a must-watch</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
@@ -34,6 +84,6 @@
         <p>@M.Ayadi</p>
     </footer>
     <!-- script -->
-    <script src="favorites.js"></script>
+     <script src="details.js"></script>
 </body>
 </html>

@@ -101,7 +101,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     width: 80vw;
-    margin: 10vh auto;
+    margin: 7vh auto;
 }
 
 .section-title h6 {
@@ -120,12 +120,13 @@ h2 {
 .movies-container {
     width: 90%;
     margin: auto;
-    padding: 10vh 0;
+    padding: 0 0 6vh;
 }
 
 .movies .item {
     position: relative;
     border: solid 0.6em #333333 ;
+    transition: 0.3s;
 }
 
 .movies .item i {
@@ -134,9 +135,9 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 90px;
+    font-size: 300%;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .movies .item:hover i {
@@ -168,6 +169,14 @@ h2 {
     background-color: rgba(255, 0, 0, 0.5);
 }
 
+.noMovies {
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-color);
+    width: 100%;
+    margin: auto auto 10rem;
+}
 
 /* footer */
 
@@ -175,6 +184,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 40vh;
+    width: 100%;
     background-color: #080808;
     align-items: center;
     justify-content: space-around;
@@ -217,5 +227,14 @@ footer p {
     nav ul li {
         margin-right: 4vw;
     }
+
+    .movies {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 120px));;
+        gap: 5vw;
+        justify-content: center;
+    }
 }
+
+
 

@@ -11,6 +11,7 @@
     --header-color: ##FF3B3B;
     --separator: white;
     --border-color: #333333;
+    transition: 1s ;
 }
 
 .light-mode {
@@ -19,10 +20,12 @@
     --header-color: ##FF3B3B;
     --separator: #0D0D0D;
     --border-color: #333333;
+    transition: 1s ;
 }
 
 body {
     background-color: var(--background-color);
+    transition: 1s;
 }
 
 h1, h2, h3, h4 {
@@ -162,7 +165,7 @@ nav label:hover {
 }
 
 .stars i:hover {
-    transform: scale(1.2);
+    color: #FF3B3B;
     transition: 0.3s;
 }
 
@@ -198,8 +201,8 @@ nav label:hover {
 }
 
 .details-container button:hover {
-    background-color: #fb6a27;
-    transition: 0.3s ease;
+    background-color: #9a1414;
+    transition: 0.2s ease;
 }
 
 .comment-container h4 {
@@ -262,6 +265,7 @@ footer {
     background-color: #080808;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
 }
 
 footer div {
