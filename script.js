@@ -139,21 +139,26 @@ function applySavedTheme() {
 
   if (savedTheme === "light") {
     document.body.classList.add("light-mode");
+    themeToggleButton.textContent = "Dark";
   } else {
     document.body.classList.remove("light-mode");
+    themeToggleButton.textContent = "Light";
   }
 }
 
 function toggleTheme() {
+
   document.body.classList.toggle("light-mode");
 
   const currentTheme = document.body.classList.contains("light-mode") ? "light" : "dark";
   localStorage.setItem("theme", currentTheme);
+
+  themeToggleButton.textContent = currentTheme === "light" ? "Dark" : "Light";
 }
 
 themeToggleButton.addEventListener("click", toggleTheme);
-
 applySavedTheme();
+
 
 ////////////////////////////////////
 
